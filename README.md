@@ -1,80 +1,150 @@
-For Cpp and Cuda
-Required Installations
-1. Install MinGW-w64 (for g++ compiler)
+# C++ OpenMP Setup Guide
 
-Download:
+This guide explains how to install and configure the C++ compiler required for OpenMP programs on Windows.
 
-MinGW-w64 Official Build
+---
 
-Download:
+# Required Installations
 
-UCRT Runtime
-POSIX threads
-SEH (if 64-bit Windows)
+## 1. Install MinGW-w64 (for g++ compiler)
 
-Example file:
+Use the ZIP file already available in the project folder.
 
+If the files get corrupted, download again from:
+
+[WinLibs Official Website](https://winlibs.com/?utm_source=chatgpt.com)
+# https://winlibs.com/ on this page
+Release versions
+UCRT runtime
+GCC 16.1.0 (with POSIX threads) + MinGW-w64 14.0.0 (UCRT) - release 1   (LATEST)
+# Download --> Zip archive
+# Win64 (without LLVM/Clang/LLD/LLDB): 7-Zip archive* | Zip archive
+Download Version:
+
+- UCRT Runtime
+- POSIX threads
+- SEH (for 64-bit Windows)
+
+Example File:
+
+```text
 winlibs-x86_64-posix-seh-gcc-14.x.x.zip
-2. Extract
+```
 
-Extract to:
+---
 
+# 2. Extract Files
+
+Extract the ZIP file to:
+
+```text
 C:\mingw64
+```
 
 You should get:
 
+```text
 C:\mingw64\bin
+```
 
-Inside it:
+Inside the folder:
 
+```text
 g++.exe
 gcc.exe
-3. Add to PATH
-Open:
+```
+
+---
+
+# 3. Add Compiler to PATH
+
+## Open
+
+```text
 Windows Search → Environment Variables
+```
 
 Open:
 
+```text
 Edit the system environment variables
+```
 
-Then:
+Then click:
 
+```text
 Environment Variables
+```
 
 Under:
 
+```text
 System Variables
+```
 
 Select:
 
+```text
 Path
+```
 
 Click:
 
+```text
 Edit → New
+```
 
 Add:
 
+```text
 C:\mingw64\bin
+```
 
 Click OK everywhere.
 
-4. Restart PowerShell / VS Code
+---
 
-Then test:
+# 4. Restart PowerShell / VS Code
 
+Close and reopen PowerShell or VS Code.
+
+Then verify installation:
+
+```powershell
 g++ --version
+```
 
 If installed correctly:
 
+```text
 g++ (GCC) 14.x.x
-5. Compile OpenMP Programs
+```
 
-Now your commands will work:
+---
 
+# 5. Compile OpenMP Programs
+
+Example:
+
+```powershell
 g++ bfs.cpp -fopenmp -o bfs
 ./bfs
+```
 
+---
+
+# Notes
+
+- OpenMP support is enabled using:
+
+```text
+-fopenmp
+```
+
+- `g++` is the GNU C++ compiler.
+- OpenMP allows parallel execution using multiple CPU threads.
+- Use PowerShell, CMD, or VS Code terminal for compilation.
+  
 # Parallel Computing and CUDA Programs
 
 This repository contains implementations of Parallel Computing algorithms using OpenMP and CUDA C.  
