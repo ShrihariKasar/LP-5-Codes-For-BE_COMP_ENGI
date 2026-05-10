@@ -8,9 +8,6 @@ This guide explains how to install and configure the C++ compiler required for O
 
 ## 1. Install MinGW-w64 (for g++ compiler)
 
-Use the ZIP file already available in the project folder.
-
-If the files get corrupted, download again from:
 
 [WinLibs Official Website](https://winlibs.com/?utm_source=chatgpt.com)
 # https://winlibs.com/ on this page
